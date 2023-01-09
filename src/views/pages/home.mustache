@@ -1,0 +1,30 @@
+{{>partials/header}}
+    <p>Olá tudo bem {{ user.firstName }}?</p>
+    <p>Voce tem {{ user.age }}?</p>
+  {{#showOld}}
+    voce e de maior!
+  {{/showOld}}
+
+  <h2>Produtos</h2>
+  <ul>
+    {{#products}}
+      <li>{{ title }} - R$ {{ price }}</li>
+    {{/products}}
+  </ul>
+  <hr/>
+  <h2>Produtos a Partir de 1.100</h2>
+  <ul>
+    {{#expensives}}
+      <li>{{ title }} - R$ {{ price }}</li>
+    {{/expensives}}
+  </ul>
+  <hr/>
+  <ul>
+   {{#listText}}
+    <li>{{.}}</li>
+   {{/listText}}
+   {{^listText}}
+    não a itens na lista
+   {{/listText}}
+  </ul>
+{{>partials/footer}}
